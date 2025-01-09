@@ -2,8 +2,13 @@ using UnityEngine;
 
 public class Coim : Pickup
 {
+    [SerializeField] int scoreAmount = 100;
+    ScoreManager scoreManager;
+    void Awake() {
+        scoreManager = FindAnyObjectByType<ScoreManager>();    
+    }
     protected override void OnPickup()
     {
-        Debug.Log("Add 100 points");
+        scoreManager.IncreaseScore(scoreAmount);
     }
 }
