@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class Coim : Pickup
+public class Coin : Pickup
 {
     [SerializeField] int scoreAmount = 100;
     ScoreManager scoreManager;
-    void Awake() {
-        scoreManager = FindAnyObjectByType<ScoreManager>();    
+    public void Init(ScoreManager scoreManager) {
+        this.scoreManager = scoreManager;
     }
     protected override void OnPickup()
     {
