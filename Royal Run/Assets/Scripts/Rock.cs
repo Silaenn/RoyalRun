@@ -8,7 +8,7 @@ public class Rock : MonoBehaviour
     [SerializeField] float shakeModifer = 10f;
     [SerializeField] float collisionCooldown = 1f;
     CinemachineImpulseSource cinemachineImpulseSource;
-    float collisionTimer = 0f;
+    float collisionTimer = 1f;
 
     void Awake() {
         cinemachineImpulseSource = GetComponent<CinemachineImpulseSource>();

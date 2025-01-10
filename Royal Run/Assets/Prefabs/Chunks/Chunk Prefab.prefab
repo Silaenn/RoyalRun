@@ -84,7 +84,7 @@ MonoBehaviour:
   fencePrefab: {fileID: 2561011818347567062, guid: b01f54f0112a6d4429bbd83b4ae78969, type: 3}
   applePrefab: {fileID: 6544200353273893028, guid: 7f832e3f8a09a1c48bffe8b2daf8aae4, type: 3}
   coinPrefab: {fileID: 5576920213622310309, guid: 385ab00194015fe48973d9e30d1b990b, type: 3}
-  appleSpawnChance: 0.3
+  appleSpawnChance: 0.12
   coinpawnChance: 0.5
   coinSeperationLength: 2
   lanes:
