@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 5f;
+     [SerializeField] float minMoveSpeed = 5f;
+      [SerializeField] float maxMoveSpeed = 18f;
     [SerializeField] float xClamp = 3f;
     [SerializeField] float zClamp = 3f;
     
@@ -31,5 +33,9 @@ public class PlayerController : MonoBehaviour
         newPosition.x = Mathf.Clamp(newPosition.x, -xClamp, xClamp);
         newPosition.z = Mathf.Clamp(newPosition.z, -zClamp, zClamp);
         rigidBody.MovePosition(newPosition);
+    }
+
+    public void AdjustMoveSpeed(float amount) {
+          moveSpeed = Mathf.Clamp(moveSpeed + amount, minMoveSpeed, maxMoveSpeed);
     }
 }

@@ -9,6 +9,7 @@ public class LevelGeneretor : MonoBehaviour
     [SerializeField] GameObject checkpointChunkPrefab;
     [SerializeField] Transform chunckParent;
     [SerializeField] ScoreManager scoreManager;
+    [SerializeField] PlayerController playerController;
 
     [Header("Level Settings")]
     [Tooltip("The amount of chunks we start with")]
@@ -68,7 +69,7 @@ public class LevelGeneretor : MonoBehaviour
 
         chunks.Add(newChunkGO);
         Chunk newChunk = newChunkGO.GetComponent<Chunk>();
-        newChunk.Init(this, scoreManager);
+        newChunk.Init(this, scoreManager, playerController);
 
         chunksSpawned++;
     }

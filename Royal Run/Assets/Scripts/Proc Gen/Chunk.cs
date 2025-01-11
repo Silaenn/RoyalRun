@@ -12,6 +12,7 @@ public class Chunk : MonoBehaviour
     [SerializeField] float[] lanes = {-2.5f, 0f, 2.5f};
     LevelGeneretor levelGeneretor;
     ScoreManager scoreManager;
+    PlayerController playerController;
     List<int> availableLanes = new List<int> {0, 1, 2};
 
     void Start() {
@@ -20,9 +21,10 @@ public class Chunk : MonoBehaviour
         SpawnCoin();
     }
 
-    public void Init(LevelGeneretor levelGeneretor, ScoreManager scoreManager) {
+    public void Init(LevelGeneretor levelGeneretor, ScoreManager scoreManager, PlayerController playerController) {
         this.levelGeneretor = levelGeneretor;
         this.scoreManager = scoreManager;
+        this.playerController = playerController;
     }
 
     void SpawnFence(){
@@ -47,7 +49,7 @@ public class Chunk : MonoBehaviour
 
         Vector3 spawnPosition = new Vector3(lanes[selectedLane], transform.position.y, transform.position.z);
         Apple newApple = Instantiate(applePrefab, spawnPosition, Quaternion.identity, this.transform).GetComponent<Apple>();
-        newApple.Init(levelGeneretor);
+        newApple.Init(levelGeneretor, playerController);
     }
 
     void SpawnCoin()

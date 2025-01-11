@@ -9,9 +9,11 @@ public class PlayerCollisionHandler : MonoBehaviour
     float cooldownTimer = 0f;
 
     LevelGeneretor levelGeneretor;
+    PlayerController playerController;
 
     void Start() {
         levelGeneretor = FindAnyObjectByType<LevelGeneretor>();
+        playerController = FindAnyObjectByType<PlayerController>();
     }
 
     void Update()
@@ -22,6 +24,8 @@ public class PlayerCollisionHandler : MonoBehaviour
        if(cooldownTimer < collisionCooldown) return;
 
        levelGeneretor.ChangeChunkMoveSpeed(adjustChangeMoveSpeedAmount); 
+       playerController.AdjustMoveSpeed(adjustChangeMoveSpeedAmount);
+
        animator.SetTrigger(hitString);
        cooldownTimer = 0f;
     }
