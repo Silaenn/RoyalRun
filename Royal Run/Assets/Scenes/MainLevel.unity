@@ -437,6 +437,7 @@ MonoBehaviour:
   checkpointChunkPrefab: {fileID: 7017812773465716749, guid: 73edd22b73b0a4c4fa08c8e0c722abfa, type: 3}
   chunckParent: {fileID: 1235978400}
   scoreManager: {fileID: 113737844}
+  playerController: {fileID: 1801675643}
   startingChunksAmount: 12
   checkpointChunkInterval: 8
   chunkLength: 10
@@ -11371,6 +11372,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 6a598330-9611-4905-b6fb-dbda4212872b
     m_ActionName: 'Player/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1801675643}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: Jump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d12c756d-3760-4a06-bd47-7ae72240b488
+    m_ActionName: 'Player/Jump[/Keyboard/space]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -11389,8 +11406,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  minMoveSpeed: 5
+  maxMoveSpeed: 18
   xClamp: 3
   zClamp: 2
+  jumpForce: 5
+  gravity: -9.81
+  animator: {fileID: 1822371048}
 --- !u!54 &1801675644
 Rigidbody:
   m_ObjectHideFlags: 0
